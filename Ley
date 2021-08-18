@@ -1,0 +1,38 @@
+import numpy as np
+import matplotlib
+from pylab import *
+
+'''
+Ley de Archie
+
+Sw=sqrt(a*Rw)/(phi**m*Rt)
+
+pow(phi,m)=phi**m
+'''
+phi=np.arange(0.01, 0.4, 0.01)
+Rw=np.array([0.1, 2, 3])
+Rt = 2
+a = 1
+m = 1.7
+
+#Declarar variable
+Sw1=np.sqrt((a*Rw[0])/((phi**m) *Rt))
+Sw2=np.sqrt((a*Rw[1])/((phi**m) *Rt))
+Sw3=np.sqrt((a*Rw[2])/((phi**m) *Rt))
+
+
+figure(1)
+clf #Para cerrar pestaña
+
+plot(phi, Sw1     )
+plot(phi, Sw2     )
+plot(phi, Sw3     )
+
+xlabel('Phi')
+ylabel('Sw')
+legend(['Rw1','Rw2','Rw3'])
+xscale('Linear')
+yscale('linear')
+grid('True')
+
+plt.show()
